@@ -1,0 +1,267 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0B031E;
+  color: #FFFFFF;
+  padding-top: 60px; /* espaço da navbar */
+}
+
+/* 🔝 HEADER */
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), #0B031E),
+              url("energeo.png") center/cover no-repeat;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 🔝 NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 30px; /* 👈 mais fino */
+
+  background: rgba(11, 3, 30, 0.85);
+  backdrop-filter: blur(8px);
+
+  z-index: 1000;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ESCONDER NO FOOTER */
+.nav-hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* LOGO ESQUERDA */
+.logo {
+  width: 110px;
+}
+
+/* MENU DIREITA */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+/* EFEITO */
+.menu a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #00E0FF;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* 🏠 HERO */
+.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.inicio h1 {
+  font-size: 3em;
+}
+
+.inicio span {
+  color: #00E0FF;
+}
+
+/* BOTÃO */
+.btn {
+  background-color: #00E0FF;
+  color: #000;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* 💰 PREÇOS */
+.precos {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.preco-destaque {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* 👈 resolve celular */
+}
+
+.preco-destaque div {
+  background-color: #1F0852;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 140px;
+}
+
+.preco-destaque h1 {
+  font-size: 2em;
+}
+
+/* ORÇAMENTO */
+.orcamento {
+  background-color: #1F0852;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 40px;
+  border-radius: 12px;
+}
+
+/* 🛠️ SERVIÇOS */
+.servicos {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.servicos-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.servico {
+  width: 300px;
+}
+
+.servico img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 📞 CONTATO */
+.contato {
+  text-align: center;
+  padding: 40px;
+}
+
+/* 💬 WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #25D366;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.whatsapp-float img {
+  width: 32px; /* 👈 maior */
+}
+
+/* 🔻 FOOTER */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 30px;
+}
+
+.redes-sociais {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes-sociais img {
+  width: 40px; /* 👈 maior pra clique */
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 768px) {
+
+  /* NAV CONTINUA LADO A LADO */
+  nav {
+    padding: 6px 15px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 0.85em;
+  }
+
+  /* HERO */
+  .inicio {
+    padding-top: 100px;
+  }
+
+  .inicio h1 {
+    font-size: 2em;
+  }
+
+  /* PREÇOS LADO A LADO */
+  .preco-destaque {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .preco-destaque div {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .preco-destaque h1 {
+    font-size: 1.4em;
+  }
+
+  /* SERVIÇOS */
+  .servicos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .servico {
+    width: 90%;
+  }
+
+}
